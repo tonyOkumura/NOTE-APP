@@ -11,7 +11,7 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return SideMenu(
-      background: Theme.of(context).colorScheme.tertiaryContainer,
+      background: Theme.of(context).colorScheme.secondaryContainer,
       type: SideMenuType.slideNRotate,
       key: controller.sideMenuKey,
       menu: buildMenu(),
@@ -54,14 +54,14 @@ Widget buildMenu() {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CircleAvatar(
-                backgroundColor: Get.theme.colorScheme.onTertiaryContainer,
+                backgroundColor: Get.theme.colorScheme.onSecondaryContainer,
                 radius: 22.0,
               ),
               const SizedBox(height: 16.0),
               Text(
                 "Hello, John Doe",
-                style:
-                    TextStyle(color: Get.theme.colorScheme.onTertiaryContainer),
+                style: TextStyle(
+                    color: Get.theme.colorScheme.onSecondaryContainer),
               ),
               const SizedBox(height: 20.0),
             ],
@@ -75,11 +75,11 @@ Widget buildMenu() {
           leading: Icon(
             Icons.home,
             size: 20.0,
-            color: Get.theme.colorScheme.onTertiaryContainer,
+            color: Get.theme.colorScheme.onSecondaryContainer,
           ),
           title: Text(
             "Home",
-            style: TextStyle(color: Get.theme.colorScheme.onTertiaryContainer),
+            style: TextStyle(color: Get.theme.colorScheme.onSecondaryContainer),
           ),
           dense: true,
         ),
@@ -88,10 +88,10 @@ Widget buildMenu() {
             Get.toNamed('/settings');
           },
           leading: Icon(Icons.settings,
-              size: 20.0, color: Get.theme.colorScheme.onTertiaryContainer),
+              size: 20.0, color: Get.theme.colorScheme.onSecondaryContainer),
           title: Text(
             "Settings",
-            style: TextStyle(color: Get.theme.colorScheme.onTertiaryContainer),
+            style: TextStyle(color: Get.theme.colorScheme.onSecondaryContainer),
           ),
 
           dense: true,
