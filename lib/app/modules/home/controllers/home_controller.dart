@@ -4,8 +4,8 @@ import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 
 class HomeController extends GetxController {
   final isOpened = false.obs;
+  final selectedIndex = 0.obs;
 
-  final count = 0.obs;
   final GlobalKey<SideMenuState> sideMenuKey = GlobalKey<SideMenuState>();
   @override
   void onInit() {
@@ -21,6 +21,4 @@ class HomeController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

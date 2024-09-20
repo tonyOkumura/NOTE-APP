@@ -9,16 +9,26 @@ class SettingsView extends GetView<SettingsController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Настройки'),
+        title: Text('Settings',
+            style: TextStyle(
+              color: Get.theme.colorScheme.primary,
+              fontSize: 24.0,
+              fontWeight: FontWeight.bold,
+            )),
         centerTitle: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: ListView(
           children: [
+            Divider(
+              color: Get.theme.colorScheme.primary,
+            ),
             ListTile(
-              title: const Text('Темы'),
-              subtitle: const Text('Смените тему приложения'),
+              leading: Icon(Icons.brightness_4,
+                  color: Get.theme.colorScheme.secondary),
+              title: const Text('Theme'),
+              subtitle: const Text('Change app theme'),
               trailing: Obx(() => Switch(
                     value: controller.isDarkMode.value,
                     onChanged: (value) {
@@ -26,7 +36,9 @@ class SettingsView extends GetView<SettingsController> {
                     },
                   )),
             ),
-            // const Divider(),
+            Divider(
+              color: Get.theme.colorScheme.primary,
+            ),
             // ListTile(
             //   title: const Text('Уведомления'),
             //   subtitle: const Text('Настройка уведомлений'),
