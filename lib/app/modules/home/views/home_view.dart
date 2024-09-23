@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:note_app/app/data/models/note_model.dart';
 import 'package:note_app/app/data/repository/repo.dart';
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 
@@ -21,21 +22,27 @@ class HomeView extends GetView<HomeController> {
       menu: DrawerMenu(),
       child: Scaffold(
         appBar: _buildAppBar(),
-        body: ListView.builder(
-            itemCount: bankNotes.length,
-            itemBuilder: (
-              context,
-              index,
-            ) {
-              return NoteCard(
-                  index: index,
-                  onTap: () {
-                    controller.selectedIndex.value = index;
-                    Get.toNamed(Routes.NOTE);
-                  });
-            }),
+        body: Obx(
+          () => ListView.builder(
+              itemCount: bankNotes.length,
+              itemBuilder: (
+                context,
+                index,
+              ) {
+                return NoteCard(
+                    index: bankNotes.length - 1 - index,
+                    onTap: () {
+                      controller.selectedIndex.value =
+                          bankNotes.length - 1 - index;
+                      Get.toNamed(Routes.NOTE);
+                    });
+              }),
+        ),
         floatingActionButton: FloatingActionButton(
-          onPressed: () {},
+          onPressed: () {
+            controller.selectedIndex.value = -1;
+            Get.toNamed(Routes.NOTE);
+          },
           child: const Icon(Icons.add),
         ),
       ),

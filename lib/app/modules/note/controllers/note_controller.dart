@@ -15,9 +15,13 @@ class NoteController extends GetxController {
   void onInit() {
     super.onInit();
     final selectedIndex = Get.find<HomeController>().selectedIndex;
-    note = bankNotes[selectedIndex.value];
-    titleController.text = note.title;
-    descriptionController.text = note.description;
+    if (selectedIndex.value == -1) {
+      note = NoteModel(title: '', description: '', date: DateTime.now());
+    } else {
+      note = bankNotes[selectedIndex.value];
+      titleController.text = note.title;
+      descriptionController.text = note.description;
+    }
   }
 
   @override
@@ -28,5 +32,21 @@ class NoteController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+  }
+
+  void addNote() {
+    if (titleController.text.isNotEmpty &&
+        descriptionController.text.isNotEmpty) {
+      note.title = titleController.text;
+      note.description = descriptionController.text;
+      note.date = DateTime.now();
+      if (Get.find<HomeController>().selectedIndex.value == -1) {
+        bankNotes.add(note);
+      } else {
+        bankNotes[Get.find<HomeController>().selectedIndex.value] = note;
+      }
+      Get.find<HomeController>().selectedIndex.value = -1;
+      Get.back();
+    }
   }
 }

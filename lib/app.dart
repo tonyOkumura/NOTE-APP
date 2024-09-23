@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: "Note App",
       theme: materialTheme.light(),
       darkTheme: materialTheme.dark(),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.dark,
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     );
