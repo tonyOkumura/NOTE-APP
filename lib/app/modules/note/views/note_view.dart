@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-
-import '../../../data/models/note_model.dart';
 import '../controllers/note_controller.dart';
 
 class NoteView extends GetView<NoteController> {
@@ -22,12 +19,12 @@ class NoteView extends GetView<NoteController> {
           children: [
             TextField(
               controller: controller.titleController,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: "Заголовок", // Подсказка для пользователя
                 border: OutlineInputBorder(), // Граница вокруг поля ввода
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             TextField(
               controller: controller.descriptionController,
               maxLines: null, // Поле будет расти по мере ввода
@@ -36,7 +33,7 @@ class NoteView extends GetView<NoteController> {
                   TextInputType.multiline, // Включает многострочный ввод
               textInputAction:
                   TextInputAction.newline, // Позволяет вставлять новые строки
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                 hintText: "Введите описание", // Подсказка для пользователя
                 border: OutlineInputBorder(), // Граница вокруг поля ввода
               ),

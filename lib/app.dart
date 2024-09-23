@@ -5,10 +5,10 @@ import 'package:note_app/material_theme.dart';
 import 'app/routes/app_pages.dart';
 
 class MyApp extends StatelessWidget {
-  MyApp({
+  const MyApp({
     super.key,
   });
-  final materialTheme = MaterialTheme(TextTheme());
+  final materialTheme = const MaterialTheme(TextTheme());
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       title: "Note App",
       theme: materialTheme.light(),
       darkTheme: materialTheme.dark(),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
     );

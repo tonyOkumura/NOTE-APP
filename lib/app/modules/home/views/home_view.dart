@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:note_app/app/data/models/note_model.dart';
-import 'package:note_app/app/data/repository/repo.dart';
+
 import 'package:shrink_sidemenu/shrink_sidemenu.dart';
 
 import '../../../routes/app_pages.dart';
@@ -24,16 +23,16 @@ class HomeView extends GetView<HomeController> {
         appBar: _buildAppBar(),
         body: Obx(
           () => ListView.builder(
-              itemCount: bankNotes.length,
+              itemCount: controller.bankNotes.length,
               itemBuilder: (
                 context,
                 index,
               ) {
                 return NoteCard(
-                    index: bankNotes.length - 1 - index,
+                    index: controller.bankNotes.length - 1 - index,
                     onTap: () {
                       controller.selectedIndex.value =
-                          bankNotes.length - 1 - index;
+                          controller.bankNotes.length - 1 - index;
                       Get.toNamed(Routes.NOTE);
                     });
               }),

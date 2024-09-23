@@ -39,32 +39,6 @@ class SettingsView extends GetView<SettingsController> {
             Divider(
               color: Get.theme.colorScheme.primary,
             ),
-            // ListTile(
-            //   title: const Text('Уведомления'),
-            //   subtitle: const Text('Настройка уведомлений'),
-            //   trailing: const Icon(Icons.arrow_forward_ios),
-            //   onTap: () {
-            //     // Логика для перехода к настройкам уведомлений
-            //   },
-            // ),
-            // const Divider(),
-            // ListTile(
-            //   title: const Text('О приложении'),
-            //   subtitle: const Text('Информация о приложении'),
-            //   trailing: const Icon(Icons.arrow_forward_ios),
-            //   onTap: () {
-            //     // Логика для перехода к информации о приложении
-            //   },
-            // ),
-            // const Divider(),
-            // ListTile(
-            //   title: const Text('Профиль'),
-            //   subtitle: const Text('Управление профилем'),
-            //   trailing: const Icon(Icons.arrow_forward_ios),
-            //   onTap: () {
-            //     // Логика для перехода к настройкам профиля
-            //   },
-            // ),
           ],
         ),
       ),
